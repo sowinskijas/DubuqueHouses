@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Dubuque Home Buyers</title>
+<meta name="description" content="Contact Dubuque Home Buyers — get your free cash offer today. Call (563) 542-9154 or fill out our form. We respond within 24 hours, guaranteed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --white: #ffffff;
+  --off-white: #f8f8f8;
+  --light-gray: #f2f2f0;
+  --mid-gray: #e5e5e3;
+  --text-light: #8a8a8a;
+  --text-mid: #555555;
+  --text-dark: #1a1a1a;
+  --blue: #1a6bbd;
+  --blue-light: #2d84d8;
+  --blue-dark: #0f4d8a;
+  --blue-pale: #e8f1fa;
+  --silver: #9aa0a8;
+  --shadow-sm: 0 2px 12px rgba(0,0,0,0.07);
+  --shadow-md: 0 6px 28px rgba(0,0,0,0.10);
+  --shadow-lg: 0 16px 56px rgba(0,0,0,0.13);
+  --radius: 10px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:"Outfit",sans-serif;color:var(--text-dark);background:var(--white);line-height:1.6;font-weight:400;}
+h1,h2,h3,h4{font-family:"Cormorant Garamond",serif;font-weight:700;line-height:1.15;}
+
+/* ── STICKY HEADER ── */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--mid-gray);
+  height:68px;display:flex;align-items:center;
+  padding:0 40px;justify-content:space-between;
+  box-shadow:var(--shadow-sm);
+}
+.header-logo img{height:44px;width:auto;display:block;}
+.header-nav{display:flex;gap:32px;align-items:center;}
+.header-nav a{
+  text-decoration:none;color:var(--text-dark);
+  font-size:0.875rem;font-weight:500;
+  transition:color 0.15s;
+}
+.header-nav a:hover{color:var(--blue);}
+.header-nav a.active{color:var(--blue);font-weight:600;}
+.header-phone a{
+  display:flex;align-items:center;gap:8px;
+  background:var(--blue);color:var(--white);
+  padding:10px 20px;border-radius:7px;
+  text-decoration:none;font-size:0.875rem;font-weight:600;
+  transition:background 0.2s;
+}
+.header-phone a:hover{background:var(--blue-dark);}
+
+/* ── PAGE LAYOUT ── */
+.page-wrap{padding-top:68px;min-height:100vh;}
+
+/* ── PAGE HERO ── */
+.page-hero{background:var(--blue);padding:72px 40px 60px;text-align:center;}
+.page-hero h1{color:var(--white);font-size:clamp(1.8rem,3.5vw,3rem);margin-bottom:14px;}
+.page-hero h1 span{color:#7ec8f5;}
+.page-hero p{color:rgba(255,255,255,0.75);font-size:1rem;max-width:620px;margin:0 auto 28px;line-height:1.7;}
+.cta-phone-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:white;color:var(--blue);
+  padding:14px 36px;border-radius:7px;
+  font-size:1.05rem;font-weight:700;
+  text-decoration:none;border:2px solid white;
+  transition:all 0.2s;
+}
+.cta-phone-btn:hover{background:var(--blue-pale);}
+
+/* ── PAGE BODY ── */
+.page-body{max-width:880px;margin:0 auto;padding:60px 40px;}
+.page-body h2{font-size:1.7rem;color:var(--text-dark);margin:36px 0 14px;}
+.page-body h2:first-child{margin-top:0;}
+.page-body p{color:var(--text-mid);line-height:1.8;margin-bottom:14px;font-size:0.925rem;}
+
+/* ── INLINE FORM ── */
+.inline-form{background:var(--light-gray);border:1px solid var(--mid-gray);border-radius:12px;padding:36px;margin:44px 0;}
+.inline-form h3{font-size:1.3rem;color:var(--text-dark);margin-bottom:6px;}
+.inline-form p{color:var(--text-mid);font-size:0.875rem;margin-bottom:22px;}
+
+/* ── FORM ELEMENTS ── */
+.form-group{margin-bottom:14px;}
+.form-group label{
+  display:block;font-size:0.75rem;font-weight:600;
+  color:var(--text-mid);margin-bottom:5px;
+  letter-spacing:0.05em;text-transform:uppercase;
+}
+.form-group input,.form-group textarea{
+  width:100%;padding:12px 14px;
+  border:1.5px solid var(--mid-gray);border-radius:7px;
+  font-family:"Outfit",sans-serif;font-size:0.9rem;
+  color:var(--text-dark);background:var(--off-white);
+  outline:none;transition:border-color 0.2s,box-shadow 0.2s;
+}
+.form-group input:focus,.form-group textarea:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(26,107,189,0.12);
+  background:var(--white);
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.btn-main{
+  width:100%;background:var(--blue);color:var(--white);
+  border:none;cursor:pointer;padding:15px 20px;border-radius:7px;
+  font-family:"Outfit",sans-serif;font-size:0.975rem;font-weight:700;
+  letter-spacing:0.02em;transition:background 0.2s,transform 0.1s;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  max-width:500px;
+}
+.btn-main:hover{background:var(--blue-dark);transform:translateY(-1px);}
+.btn-main:active{transform:translateY(0);}
+.form-note{font-size:0.72rem;color:var(--text-light);text-align:center;margin-top:10px;line-height:1.5;}
+
+/* ── FOOTER ── */
+.footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center;padding:32px 40px;font-size:0.8rem;}
+.footer a{color:rgba(255,255,255,0.6);text-decoration:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .header{padding:0 20px;}
+  .header-nav{display:none;}
+  .page-hero{padding:56px 20px 48px;}
+  .page-body{padding:40px 20px;}
+  .inline-form{padding:24px 20px;}
+  .form-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<header class="header">
+  <a href="index-4.html" class="header-logo" style="text-decoration:none;display:flex;align-items:center;">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--blue);">Dubuque Home Buyers</span>
+  </a>
+  <nav class="header-nav">
+    <a href="index-4.html">How It Works</a>
+    <a href="index-4.html">Sell Fast</a>
+    <a href="index-4.html">Cash Buyers</a>
+    <a href="index-4.html">Foreclosure</a>
+    <a href="index-4.html">Reviews</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+  <div class="header-phone">
+    <a href="tel:+15635429154">📞 (563) 542-9154</a>
+  </div>
+</header>
+
+<div class="page-wrap">
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div style="max-width:1100px;margin:0 auto">
+      <h1>Request Your <span>Free Cash Offer</span></h1>
+      <p>Ready to sell your Dubuque home? Fill out the form below or call us directly. We respond within 24 hours, guaranteed.</p>
+      <a href="tel:+15635429154" class="cta-phone-btn">📞 Call Now: (563) 542-9154</a>
+    </div>
+  </div>
+
+  <!-- PAGE BODY -->
+  <div class="page-body">
+    <h2>Get Your Free Cash Offer</h2>
+    <p>We serve all of Dubuque County — including Dubuque, Asbury, Peosta, Key West, and East Dubuque. Fill out the form below and we'll be in touch within 24 hours.</p>
+
+    <div class="inline-form">
+      <h3>Contact Us / Request Cash Offer</h3>
+      <p>All information is kept strictly confidential.</p>
+      <div class="form-group"><label>Property Address</label><input type="text" placeholder="Full property address including city"></div>
+      <div class="form-row">
+        <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"></div>
+        <div class="form-group"><label>Best Phone Number</label><input type="tel" placeholder="(563) 542-9154"></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
+      <div class="form-group">
+        <label>Tell Us About Your Situation (Optional)</label>
+        <textarea rows="4" placeholder="E.g. Inherited property, need to sell fast, behind on payments, rental property, etc."></textarea>
+      </div>
+      <button class="btn-main" onclick="submitForm(this)">📞 Request My Free Cash Offer →</button>
+      <p class="form-note">We never share your information. No spam, ever.</p>
+    </div>
+
+    <div style="margin-top:28px;padding:26px;background:var(--light-gray);border-radius:10px;border:1px solid var(--mid-gray);">
+      <h3 style="font-size:1.15rem;margin-bottom:14px;">Other Ways to Reach Us</h3>
+      <p>📞 <strong>Phone / Text:</strong> <a href="tel:+15635429154" style="color:var(--blue);font-weight:600;">(563) 542-9154</a> — available 7 days a week</p>
+      <p style="margin-top:8px;">📧 <strong>Email:</strong> <a href="mailto:dubuquehomebuyer@gmail.com" style="color:var(--blue);font-weight:600;">dubuquehomebuyer@gmail.com</a></p>
+      <p style="margin-top:8px;">📍 <strong>Service Area:</strong> Dubuque, Asbury, Peosta, Key West, East Dubuque &amp; all of Dubuque County</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>&copy; 2025 Dubuque Home Buyers. All rights reserved. &nbsp;|&nbsp; <a href="tel:+15635429154">(563) 542-9154</a> &nbsp;|&nbsp; <a href="mailto:dubuquehomebuyer@gmail.com">dubuquehomebuyer@gmail.com</a></p>
+</footer>
+
+<script>
+function submitForm(btn) {
+  const form = btn.closest('.inline-form');
+  const inputs = form.querySelectorAll('input, textarea');
+  let filled = false;
+  inputs.forEach(i => { if (i.value.trim()) filled = true; });
+  btn.textContent = '✅ Thank you! We\'ll be in touch within 24 hours.';
+  btn.style.background = '#1a7a3f';
+  btn.disabled = true;
+}
+</script>
+
+</body>
+</html>
