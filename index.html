@@ -48,7 +48,7 @@ h1,h2,h3,h4{font-family:"Cormorant Garamond",serif;font-weight:700;line-height:1
 
 .header-row1{
   display:flex;align-items:center;justify-content:space-between;
-  padding:14px 48px;
+  padding:6px 48px;
   overflow:hidden;
   max-height:200px;
   opacity:1;
@@ -198,7 +198,7 @@ h1,h2,h3,h4{font-family:"Cormorant Garamond",serif;font-weight:700;line-height:1
 .btn-main:active{transform:translateY(0);}
 .form-note{font-size:0.72rem;color:var(--text-light);text-align:center;margin-top:10px;line-height:1.5;}
 .sms-disclosure{margin-top:18px;padding:14px 16px;background:rgba(0,0,0,0.03);border:1px solid rgba(0,0,0,0.07);border-radius:8px;font-size:0.68rem;color:var(--text-light);line-height:1.65;}
-.sms-disclosure strong{color:var(--text-mid);font-weight:600;}
+.sms-disclosure strong{color:var(--text-light);font-weight:400;}
 .sms-disclosure ul{list-style:none;margin:4px 0 8px;padding:0;}
 .sms-disclosure ul li{padding-left:12px;position:relative;}
 .sms-disclosure ul li::before{content:"–";position:absolute;left:0;}
@@ -1046,7 +1046,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
           
           <li><a href="#contact" onclick="document.getElementById('main-content').style.display='block';document.querySelectorAll('.seo-page').forEach(p=>p.style.display='none');setTimeout(()=>{document.getElementById('contact').scrollIntoView({behavior:'smooth'})},50);return false;">Contact</a></li>
           <li><a href="#how-it-works" onclick="showPage('home');return false;">How It Works</a></li>
-          <li><a href="privacy.html">Privacy &amp; Terms</a></li>
+          <li><a href="#" onclick="showPage('home');window.scrollTo({top:0,behavior:'smooth'});return false;">Privacy &amp; Terms</a></li>
         </ul>
       </div>
     </div>
