@@ -425,6 +425,8 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
 
 /* ── MOBILE ── */
 @media(max-width:900px){
+  .blog-home-grid{grid-template-columns:1fr !important;}
+
   /* ── HEADER: tighter two-row on tablet ── */
   .header-row1{display:flex;max-height:80px;opacity:1;padding:10px 16px;justify-content:center;}
   .header-phone{display:none !important;}
@@ -1050,6 +1052,49 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
         <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
       </div>
       <button class="btn-main" onclick="submitForm(this)" style="max-width:420px">⚡ Get Your Cash Offer Today →</button>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG SECTION -->
+<section style="background:#f8f9fa;padding:72px 40px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#1a6bbd;margin-bottom:10px;">From The Blog</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#1a1a2e;margin-bottom:12px;">Helpful Resources for Dubuque Homeowners</h2>
+      <p style="color:#4a5568;max-width:560px;margin:0 auto;">Tips and guides to help you make the best decision when selling your home.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
+      <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+        <img src="blog/foreclosure.webp" alt="How to Avoid Foreclosure in Dubuque" style="width:100%;height:190px;object-fit:cover;display:block;">
+        <div style="padding:22px;">
+          <div style="font-size:0.72rem;color:#1a6bbd;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Foreclosure</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:#1a1a2e;margin-bottom:10px;"><a href="blog/how-to-avoid-foreclosure-dubuque.html" style="color:#1a1a2e;text-decoration:none;">How to Avoid Foreclosure in Dubuque</a></h3>
+          <p style="color:#4a5568;font-size:0.88rem;margin-bottom:14px;">Facing foreclosure is frightening. Learn your options and how to take action before it's too late.</p>
+          <a href="blog/how-to-avoid-foreclosure-dubuque.html" style="color:#1a6bbd;font-weight:600;font-size:0.88rem;text-decoration:none;">Read More &rarr;</a>
+        </div>
+      </div>
+      <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+        <img src="blog/home-for-sale.webp" alt="Sell House As-Is in Dubuque" style="width:100%;height:190px;object-fit:cover;display:block;">
+        <div style="padding:22px;">
+          <div style="font-size:0.72rem;color:#1a6bbd;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Selling As-Is</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:#1a1a2e;margin-bottom:10px;"><a href="blog/sell-house-as-is-dubuque.html" style="color:#1a1a2e;text-decoration:none;">Can You Sell a House As-Is in Dubuque?</a></h3>
+          <p style="color:#4a5568;font-size:0.88rem;margin-bottom:14px;">You don't need to fix anything. Learn how selling as-is works and what to expect from the process.</p>
+          <a href="blog/sell-house-as-is-dubuque.html" style="color:#1a6bbd;font-weight:600;font-size:0.88rem;text-decoration:none;">Read More &rarr;</a>
+        </div>
+      </div>
+      <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+        <img src="blog/dubuque4.jpg" alt="Sell Without a Realtor in Dubuque" style="width:100%;height:190px;object-fit:cover;display:block;">
+        <div style="padding:22px;">
+          <div style="font-size:0.72rem;color:#1a6bbd;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Selling Tips</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:#1a1a2e;margin-bottom:10px;"><a href="blog/sell-without-realtor-dubuque.html" style="color:#1a1a2e;text-decoration:none;">How to Sell Without a Realtor in Dubuque</a></h3>
+          <p style="color:#4a5568;font-size:0.88rem;margin-bottom:14px;">Skip the agent fees. Learn how to sell your Dubuque home directly and keep more money in your pocket.</p>
+          <a href="blog/sell-without-realtor-dubuque.html" style="color:#1a6bbd;font-weight:600;font-size:0.88rem;text-decoration:none;">Read More &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="blog/index.html" style="display:inline-block;background:#1a6bbd;color:#fff;padding:14px 36px;border-radius:7px;font-weight:700;font-size:0.95rem;text-decoration:none;">View All Articles &rarr;</a>
     </div>
   </div>
 </section>
