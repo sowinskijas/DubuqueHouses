@@ -1,0 +1,133 @@
+<!--
+  HOW TO ADD A NEW BLOG POST:
+  1. Copy this file and rename it: blog/your-post-slug.html
+  2. Replace all "YOUR POST TITLE", "YOUR-SLUG", "YOUR-IMAGE.jpg" etc.
+  3. Copy the base64 logo img tag from any existing blog post into the header-logo anchor
+  4. Write your article content between the article-wrap div
+  5. Update the Related Articles links to point to relevant posts
+  6. Add your new post to blog/index.html (copy an existing card and update)
+  7. Add the URL to sitemap.xml
+  8. Push to GitHub — it goes live automatically
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CHANGE: Update title, description, URL, and image below -->
+  <title>YOUR POST TITLE | Dubuque Home Buyers</title>
+  <meta name="description" content="YOUR META DESCRIPTION (150-160 characters for best SEO)">
+  <link rel="canonical" href="https://dubuquehomebuyer.com/blog/YOUR-SLUG.html">
+  <meta property="og:title" content="YOUR POST TITLE">
+  <meta property="og:description" content="YOUR META DESCRIPTION">
+  <meta property="og:image" content="https://dubuquehomebuyer.com/blog/YOUR-IMAGE.jpg">
+  <meta property="og:url" content="https://dubuquehomebuyer.com/blog/YOUR-SLUG.html">
+  <meta property="og:type" content="article">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "YOUR POST TITLE",
+    "description": "YOUR META DESCRIPTION",
+    "image": "https://dubuquehomebuyer.com/blog/YOUR-IMAGE.jpg",
+    "url": "https://dubuquehomebuyer.com/blog/YOUR-SLUG.html",
+    "datePublished": "2026-01-01",
+    "dateModified": "2026-01-01",
+    "author": {"@type": "Organization", "name": "Dubuque Home Buyers"},
+    "publisher": {"@type": "Organization", "name": "Dubuque Home Buyers", "url": "https://dubuquehomebuyer.com"}
+  }
+  </script>
+  <style>
+    :root{--blue:#1a6bbd;--dark:#1a1a2e;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Outfit',sans-serif;color:#333;}
+    .header{position:fixed;top:0;left:0;right:0;height:72px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 48px;box-shadow:0 2px 12px rgba(0,0,0,0.08);z-index:100;}
+    .header-logo{display:flex;align-items:center;text-decoration:none;}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
+    .hamburger span{display:block;width:24px;height:2px;background:#1a1a2e;border-radius:2px;transition:all 0.3s;}
+    .header-nav{display:flex;gap:28px;align-items:center;}
+    .header-nav a{color:var(--dark);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s;}
+    .header-nav a:hover,.header-nav a.active{color:var(--blue);}
+    .hero{background:linear-gradient(135deg,#1a1a2e 0%,#1a6bbd 100%);color:#fff;padding:120px 48px 64px;text-align:center;}
+    .hero .breadcrumb{color:rgba(255,255,255,0.7);font-size:0.82rem;margin-bottom:16px;}
+    .hero .breadcrumb a{color:rgba(255,255,255,0.85);text-decoration:none;}
+    .hero h1{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:700;max-width:800px;margin:0 auto 16px;}
+    .hero .meta{color:rgba(255,255,255,0.7);font-size:0.88rem;}
+    .article-wrap{max-width:780px;margin:0 auto;padding:60px 48px;}
+    .article-wrap img{width:100%;border-radius:12px;margin-bottom:32px;}
+    .article-wrap h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#1a1a2e;margin:36px 0 14px;}
+    .article-wrap p{line-height:1.8;margin-bottom:18px;color:#444;}
+    .article-wrap ul{margin:16px 0 18px 24px;line-height:1.8;color:#444;}
+    .cta-box{background:linear-gradient(135deg,#1a1a2e,#1a6bbd);color:#fff;border-radius:16px;padding:52px 48px;text-align:center;margin:48px 0;}
+    .cta-box h2{font-family:'Cormorant Garamond',serif;font-size:2rem;margin-bottom:14px;}
+    .cta-box p{opacity:0.88;margin-bottom:28px;}
+    .cta-box a{display:inline-block;background:#fff;color:#1a6bbd;font-weight:700;padding:16px 40px;border-radius:8px;text-decoration:none;font-size:1rem;}
+    footer{background:#1a1a2e;color:rgba(255,255,255,0.6);text-align:center;padding:32px;font-size:0.85rem;}
+    footer a{color:rgba(255,255,255,0.6);text-decoration:none;}
+    @media(max-width:768px){
+      .header{padding:0 20px;height:64px;}
+      .header-nav{display:none;}
+      .hamburger{display:flex;}
+      .header-nav.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:#fff;padding:16px 20px;gap:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);z-index:999;}
+      .hero{padding:100px 20px 48px;}
+      .hero h1{font-size:2rem;}
+      .article-wrap{padding:40px 20px;}
+      .cta-box{padding:36px 24px;}
+    }
+  </style>
+</head>
+<body>
+<header class="header">
+  <a href="../index.html" class="header-logo">
+    <!-- PASTE THE BASE64 LOGO IMG TAG FROM ANOTHER BLOG POST HERE -->
+  </a>
+  <nav class="header-nav">
+    <a href="../index.html">Home</a>
+    <a href="index.html" class="active">Blog</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+  <button class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.header-nav').classList.toggle('open');" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<section class="hero">
+  <p class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">Blog</a> &rsaquo; YOUR POST TITLE</p>
+  <h1>YOUR POST TITLE</h1>
+  <p class="meta">Dubuque Home Buyers &bull; 2026</p>
+</section>
+
+<div class="article-wrap">
+  <!-- CHANGE: Replace YOUR-IMAGE.jpg with your actual image filename in the blog folder -->
+  <img src="YOUR-IMAGE.jpg" alt="YOUR ALT TEXT">
+
+  <!-- WRITE YOUR ARTICLE CONTENT HERE -->
+  <!-- Use <h2> for section headings, <p> for paragraphs, <ul><li> for lists -->
+  <h2>First Section Heading</h2>
+  <p>Your content here...</p>
+
+  <!-- Related Articles - update links as needed -->
+  <div style="margin:48px 0 32px;padding:32px;background:#f8f9fa;border-radius:12px;">
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#1a1a2e;margin-bottom:20px;">Related Articles</h3>
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;">
+      <li><a href="sell-house-as-is-dubuque.html" style="color:#1a6bbd;text-decoration:none;font-weight:500;font-size:1rem;">→ Can You Sell a House As-Is in Dubuque?</a></li>
+      <li><a href="how-to-avoid-foreclosure-dubuque.html" style="color:#1a6bbd;text-decoration:none;font-weight:500;font-size:1rem;">→ How to Avoid Foreclosure in Dubuque</a></li>
+      <li><a href="sell-without-realtor-dubuque.html" style="color:#1a6bbd;text-decoration:none;font-weight:500;font-size:1rem;">→ How to Sell Without a Realtor in Dubuque</a></li>
+    </ul>
+  </div>
+
+  <div class="cta-box">
+    <h2>Ready to Sell Your Dubuque Home Fast?</h2>
+    <p>We buy houses in any condition — no repairs, no fees, no hassle. Get your free cash offer today.</p>
+    <a href="https://formspree.io/f/mwvaezbn">Get My Free Cash Offer</a>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 Dubuque Home Buyers &bull; <a href="../privacy.html">Privacy Policy</a> &bull; <a href="../index.html">Home</a></p>
+</footer>
+</body>
+</html>
