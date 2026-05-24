@@ -20,6 +20,8 @@
 body{font-family:"Outfit",sans-serif;color:var(--dark);background:#fff;line-height:1.7;}
 .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(14px);border-bottom:1px solid #e2e8f0;height:72px;display:flex;align-items:center;padding:0 48px;justify-content:space-between;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
 .header-logo img{height:44px;width:auto;display:block;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
+.hamburger span{display:block;width:24px;height:2px;background:#1a1a2e;border-radius:2px;transition:all 0.3s;}
 .header-nav{display:flex;gap:28px;align-items:center;}
 .header-nav a{color:var(--dark);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s;}
 .header-nav a:hover{color:var(--blue);}
@@ -49,6 +51,8 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none;}
 @media(max-width:768px){
   .header{padding:0 20px;height:64px;}
   .header-nav{display:none;}
+  .hamburger{display:flex;}
+  .header-nav.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:#fff;padding:16px 20px;gap:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);z-index:999;}
   .hero{padding:100px 20px 48px;}
   .article-wrap{padding:40px 20px;}
   .cta-box{padding:36px 24px;}
@@ -62,9 +66,10 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none;}
     <a href="../index.html#how-it-works">How It Works</a>
     <a href="../index.html#sell-fast-section">Sell Fast</a>
     <a href="../index.html">Cash Buyers</a>
-    <a href="/blog/">Blog</a>
+    <a href="index.html">Blog</a>
     <a href="../index.html#contact">Contact</a>
   </nav>
+  <button class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.header-nav').classList.toggle('open');" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="header-phone"><a href="tel:+15632278157">(563) 227-8157</a></div>
 </header>
 <script type="application/ld+json">
@@ -106,6 +111,14 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none;}
 <h2>Using a Limited Service Broker</h2>
 <p>A limited service broker plays the role of a realtor but charges a lower fee. They handle the listing, negotiations, and open houses, which could be a good option if you want to list on the traditional market. While you will pay a lower cost, you’re still subject to the movement of the Dubuque real estate market, so you could still wait months for your house to sell.</p>
 <p>When it’s time to sell house without realtor Dubuque residents can choose to list themselves, sell to a cash buyer, or use a limited service broker. Each option has pros and cons, and the one you choose depends on your goals and unique situation. Sell your home quickly for cash at fair market value with Dubuque Home Buyers. All it takes is 3 simple steps, and you can have cash in hand in as little as 10 days. Call 563.227.8157 to see how easy it is to sell your home and skip the hassle and cost of listing on the traditional market with Dubuque Home Buyers.</p>
+<div style="margin:48px 0 32px;padding:32px;background:#f8f9fa;border-radius:12px;">
+  <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#1a1a2e;margin-bottom:20px;">Related Articles</h3>
+  <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;">
+      <li><a href="sell-house-as-is-dubuque.html" style="color:#1a6bbd;text-decoration:none;font-weight:500;font-size:1rem;">→ Can You Sell a House As-Is in Dubuque?</a></li>
+      <li><a href="sell-rental-property-dubuque.html" style="color:#1a6bbd;text-decoration:none;font-weight:500;font-size:1rem;">→ Selling a Rental Property in Dubuque</a></li>
+      <li><a href="how-to-avoid-foreclosure-dubuque.html" style="color:#1a6bbd;text-decoration:none;font-weight:500;font-size:1rem;">→ How to Avoid Foreclosure in Dubuque</a></li>
+  </ul>
+</div>
   <div class="cta-box">
   <h2>Ready to Sell Your Dubuque Home?</h2>
   <p>Get a free, no-obligation cash offer today. No repairs, no commissions, close on your timeline.</p>
