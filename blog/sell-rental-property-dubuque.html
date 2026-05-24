@@ -50,13 +50,15 @@ footer{background:#111;color:rgba(255,255,255,0.5);text-align:center;padding:28p
 footer a{color:rgba(255,255,255,0.6);text-decoration:none;}
 @media(max-width:768px){
   .header{padding:0 20px;height:64px;}
-  .header-nav{display:none;}
+  .header-nav{display:none;} .hamburger{display:flex;} .header-nav.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:#fff;padding:16px 20px;gap:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);z-index:999;}
   .hamburger{display:flex;}
   .header-nav.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:#fff;padding:16px 20px;gap:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);z-index:999;}
   .hero{padding:100px 20px 48px;}
   .article-wrap{padding:40px 20px;}
   .cta-box{padding:36px 24px;}
 }
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;margin-left:auto;}
+.hamburger span{display:block;width:24px;height:2px;background:#1a1a2e;border-radius:2px;}
 </style>
 </head>
 <body>
@@ -68,7 +70,7 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none;}
     <a href="../index.html">Cash Buyers</a>
     <a href="index.html">Blog</a>
     <a href="../index.html#contact">Contact</a>
-  </nav>
+  </nav><button class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.header-nav').classList.toggle('open');" aria-label="Menu"><span></span><span></span><span></span></button>
   <button class="hamburger" onclick="this.classList.toggle('active');document.querySelector('.header-nav').classList.toggle('open');" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="header-phone"><a href="tel:+15632278157">(563) 227-8157</a></div>
 </header>
@@ -119,7 +121,7 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none;}
       <li><a href="sell-house-probate-dubuque.html" style="color:#1a6bbd;text-decoration:none;font-weight:500;font-size:1rem;">→ How to Sell a Probate House in Dubuque</a></li>
   </ul>
 </div>
-  <div class="cta-box">
+  <div style="margin:48px 0 32px;padding:32px;background:#f8f9fa;border-radius:12px;"><h3 style="font-family:Cormorant Garamond,serif;font-size:1.4rem;color:#1a1a2e;margin-bottom:20px;">Related Articles</h3><ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;"><li><a href="sell-house-as-is-dubuque.html" style="color:#1a6bbd;text-decoration:none;font-weight:500;"><div class="cta-box"#8594; Can You Sell a House As-Is in Dubuque?</a></li><li><a href="sell-house-probate-dubuque.html" style="color:#1a6bbd;text-decoration:none;font-weight:500;"><div class="cta-box"#8594; How to Sell a Probate House in Dubuque</a></li><li><a href="sell-without-realtor-dubuque.html" style="color:#1a6bbd;text-decoration:none;font-weight:500;"><div class="cta-box"#8594; How to Sell Without a Realtor in Dubuque</a></li></ul></div><div class="cta-box">
   <h2>Ready to Sell Your Dubuque Home?</h2>
   <p>Get a free, no-obligation cash offer today. No repairs, no commissions, close on your timeline.</p>
   <a href="../index.html#contact" class="btn">Get My Free Cash Offer</a>

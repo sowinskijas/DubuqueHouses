@@ -1,27 +1,26 @@
 <!--
   HOW TO ADD A NEW BLOG POST:
-  1. Copy this file and rename it: blog/your-post-slug.html
-  2. Replace all "YOUR POST TITLE", "YOUR-SLUG", "YOUR-IMAGE.jpg" etc.
-  3. Copy the base64 logo img tag from any existing blog post into the header-logo anchor
-  4. Write your article content between the article-wrap div
+  1. Copy this file and rename it: blog/your-post-slug.html (use hyphens, no spaces)
+  2. Replace ALL instances of YOUR_TITLE, YOUR_SLUG, YOUR_IMAGE, YOUR_DESCRIPTION below
+  3. Copy the logo <img> tag from any other blog post into the header-logo <a> tag
+  4. Write your article content in the article-wrap section
   5. Update the Related Articles links to point to relevant posts
-  6. Add your new post to blog/index.html (copy an existing card and update)
+  6. Add your new post card to blog/index.html (copy an existing card and update title/excerpt/link)
   7. Add the URL to sitemap.xml
-  8. Push to GitHub — it goes live automatically
+  8. Commit and push to GitHub — it goes live automatically
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- CHANGE: Update title, description, URL, and image below -->
-  <title>YOUR POST TITLE | Dubuque Home Buyers</title>
-  <meta name="description" content="YOUR META DESCRIPTION (150-160 characters for best SEO)">
-  <link rel="canonical" href="https://dubuquehomebuyer.com/blog/YOUR-SLUG.html">
-  <meta property="og:title" content="YOUR POST TITLE">
-  <meta property="og:description" content="YOUR META DESCRIPTION">
-  <meta property="og:image" content="https://dubuquehomebuyer.com/blog/YOUR-IMAGE.jpg">
-  <meta property="og:url" content="https://dubuquehomebuyer.com/blog/YOUR-SLUG.html">
+  <title>YOUR_TITLE | Dubuque Home Buyers</title>
+  <meta name="description" content="YOUR_DESCRIPTION (aim for 150-160 characters)">
+  <link rel="canonical" href="https://dubuquehomebuyer.com/blog/YOUR_SLUG.html">
+  <meta property="og:title" content="YOUR_TITLE">
+  <meta property="og:description" content="YOUR_DESCRIPTION">
+  <meta property="og:image" content="https://dubuquehomebuyer.com/blog/YOUR_IMAGE.jpg">
+  <meta property="og:url" content="https://dubuquehomebuyer.com/blog/YOUR_SLUG.html">
   <meta property="og:type" content="article">
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,10 +29,10 @@
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "YOUR POST TITLE",
-    "description": "YOUR META DESCRIPTION",
-    "image": "https://dubuquehomebuyer.com/blog/YOUR-IMAGE.jpg",
-    "url": "https://dubuquehomebuyer.com/blog/YOUR-SLUG.html",
+    "headline": "YOUR_TITLE",
+    "description": "YOUR_DESCRIPTION",
+    "image": "https://dubuquehomebuyer.com/blog/YOUR_IMAGE.jpg",
+    "url": "https://dubuquehomebuyer.com/blog/YOUR_SLUG.html",
     "datePublished": "2026-01-01",
     "dateModified": "2026-01-01",
     "author": {"@type": "Organization", "name": "Dubuque Home Buyers"},
@@ -46,8 +45,6 @@
     body{font-family:'Outfit',sans-serif;color:#333;}
     .header{position:fixed;top:0;left:0;right:0;height:72px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 48px;box-shadow:0 2px 12px rgba(0,0,0,0.08);z-index:100;}
     .header-logo{display:flex;align-items:center;text-decoration:none;}
-    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
-    .hamburger span{display:block;width:24px;height:2px;background:#1a1a2e;border-radius:2px;transition:all 0.3s;}
     .header-nav{display:flex;gap:28px;align-items:center;}
     .header-nav a{color:var(--dark);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s;}
     .header-nav a:hover,.header-nav a.active{color:var(--blue);}
@@ -65,6 +62,8 @@
     .cta-box h2{font-family:'Cormorant Garamond',serif;font-size:2rem;margin-bottom:14px;}
     .cta-box p{opacity:0.88;margin-bottom:28px;}
     .cta-box a{display:inline-block;background:#fff;color:#1a6bbd;font-weight:700;padding:16px 40px;border-radius:8px;text-decoration:none;font-size:1rem;}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
+    .hamburger span{display:block;width:24px;height:2px;background:#1a1a2e;border-radius:2px;}
     footer{background:#1a1a2e;color:rgba(255,255,255,0.6);text-align:center;padding:32px;font-size:0.85rem;}
     footer a{color:rgba(255,255,255,0.6);text-decoration:none;}
     @media(max-width:768px){
@@ -82,7 +81,7 @@
 <body>
 <header class="header">
   <a href="../index.html" class="header-logo">
-    <!-- PASTE THE BASE64 LOGO IMG TAG FROM ANOTHER BLOG POST HERE -->
+    <!-- PASTE LOGO IMG TAG FROM ANOTHER BLOG POST HERE -->
   </a>
   <nav class="header-nav">
     <a href="../index.html">Home</a>
@@ -95,27 +94,23 @@
 </header>
 
 <section class="hero">
-  <p class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">Blog</a> &rsaquo; YOUR POST TITLE</p>
-  <h1>YOUR POST TITLE</h1>
+  <p class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">Blog</a> &rsaquo; YOUR_TITLE</p>
+  <h1>YOUR_TITLE</h1>
   <p class="meta">Dubuque Home Buyers &bull; 2026</p>
 </section>
 
 <div class="article-wrap">
-  <!-- CHANGE: Replace YOUR-IMAGE.jpg with your actual image filename in the blog folder -->
-  <img src="YOUR-IMAGE.jpg" alt="YOUR ALT TEXT">
+  <img src="YOUR_IMAGE.jpg" alt="YOUR_TITLE">
 
-  <!-- WRITE YOUR ARTICLE CONTENT HERE -->
-  <!-- Use <h2> for section headings, <p> for paragraphs, <ul><li> for lists -->
   <h2>First Section Heading</h2>
   <p>Your content here...</p>
 
-  <!-- Related Articles - update links as needed -->
   <div style="margin:48px 0 32px;padding:32px;background:#f8f9fa;border-radius:12px;">
     <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#1a1a2e;margin-bottom:20px;">Related Articles</h3>
     <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;">
-      <li><a href="sell-house-as-is-dubuque.html" style="color:#1a6bbd;text-decoration:none;font-weight:500;font-size:1rem;">→ Can You Sell a House As-Is in Dubuque?</a></li>
-      <li><a href="how-to-avoid-foreclosure-dubuque.html" style="color:#1a6bbd;text-decoration:none;font-weight:500;font-size:1rem;">→ How to Avoid Foreclosure in Dubuque</a></li>
-      <li><a href="sell-without-realtor-dubuque.html" style="color:#1a6bbd;text-decoration:none;font-weight:500;font-size:1rem;">→ How to Sell Without a Realtor in Dubuque</a></li>
+      <li><a href="sell-house-as-is-dubuque.html" style="color:#1a6bbd;text-decoration:none;font-weight:500;">&#8594; Can You Sell a House As-Is in Dubuque?</a></li>
+      <li><a href="how-to-avoid-foreclosure-dubuque.html" style="color:#1a6bbd;text-decoration:none;font-weight:500;">&#8594; How to Avoid Foreclosure in Dubuque</a></li>
+      <li><a href="sell-without-realtor-dubuque.html" style="color:#1a6bbd;text-decoration:none;font-weight:500;">&#8594; How to Sell Without a Realtor in Dubuque</a></li>
     </ul>
   </div>
 
