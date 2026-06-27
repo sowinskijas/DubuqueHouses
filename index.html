@@ -1660,6 +1660,18 @@ async function submitForm(btn) {
   btn.innerHTML = '⏳ Sending...';
   btn.disabled = true;
   try {
+    const crmPayload = {
+      name: data['Name'] || data['Full Name'] || data['Your Name'] || '',
+      phone: data['Phone Number'] || data['Phone'] || data['Your Phone'] || '',
+      email: data['Email'] || data['Email Address'] || data['Your Email'] || '',
+      property_address: data['Property Address'] || data['Address'] || '',
+      message: data['Message'] || data['Additional Info'] || data['Tell us about your situation'] || ''
+    };
+    fetch('https://services.leadconnectorhq.com/hooks/ayfspoa42jBk1FihlTzI/webhook-trigger/32410d75-2cfa-4dd2-8550-e692934db9de', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(crmPayload)
+    }).catch(()=>{});
     const res = await fetch('https://formspree.io/f/mwvaezbn', {
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
