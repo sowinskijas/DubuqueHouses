@@ -1647,7 +1647,8 @@ function toggleFaq(btn) {
 async function submitForm(btn) {
   const card = btn.closest('.form-card,.inline-form,.bottom-form-card,.cta-form-wrap');
   if (!card) return;
-  const inputs = card.querySelectorAll('input,textarea');
+  const inputs = card.querySelectorAll('input:not([type="checkbox"]),textarea');
+  const consentBox = card.querySelector('.sms-consent-check input[type="checkbox"]');
   const data = {};
   let hasPhone = false, hasEmail = false;
   inputs.forEach(i => {
@@ -1657,6 +1658,12 @@ async function submitForm(btn) {
     if (i.type === 'email' && i.value.trim()) hasEmail = true;
   });
   if (!hasPhone && !hasEmail) { alert('Please enter a phone number or email address so we can reach you.'); return; }
+  if (hasPhone && consentBox && !consentBox.checked) {
+    alert('Please check the box to agree to receive text messages, or leave the phone number blank and we will reach you by email.');
+    consentBox.focus();
+    return;
+  }
+  data['SMS Consent'] = (consentBox && consentBox.checked) ? 'Yes' : 'No';
   const original = btn.innerHTML;
   btn.innerHTML = '⏳ Sending...';
   btn.disabled = true;
