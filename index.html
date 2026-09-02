@@ -1701,6 +1701,19 @@ async function submitForm(btn) {
     setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.disabled = false; }, 4000);
   }
 }
+// Inject SMS consent checkbox next to the phone field on every form
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.form-card,.inline-form,.cta-form-wrap').forEach(function(form) {
+    var tel = form.querySelector('input[type="tel"]');
+    if (!tel || form.querySelector('.sms-consent-check')) return;
+    var anchor = tel.closest('.form-group') || tel;
+    if (anchor.parentElement && anchor.parentElement.classList.contains('form-row')) anchor = anchor.parentElement;
+    var wrap = document.createElement('label');
+    wrap.className = 'sms-consent-check';
+    wrap.innerHTML = '<input type="checkbox"><span>I agree to receive text messages from Dubuque Home Buyers about my property inquiry. Consent is not a condition of selling your property. Message and data rates may apply. Message frequency may vary. Reply <strong>STOP</strong> to opt out.</span>';
+    anchor.parentNode.insertBefore(wrap, anchor.nextSibling);
+  });
+});
 // Inject SMS disclosure under every form
 document.addEventListener('DOMContentLoaded', function() {
   var disc = document.createElement('template');
