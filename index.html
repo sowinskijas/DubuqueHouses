@@ -211,7 +211,10 @@ h1,h2,h3,h4{font-family:"Cormorant Garamond",serif;font-weight:700;line-height:1
 .btn-main:hover{background:var(--blue-dark);transform:translateY(-1px);}
 .btn-main:active{transform:translateY(0);}
 .form-note{font-size:0.72rem;color:var(--text-light);text-align:center;margin-top:10px;line-height:1.5;}
-.sms-consent-check{display:flex;align-items:flex-start;gap:10px;margin:0 0 18px;cursor:pointer;font-size:0.78rem;line-height:1.6;color:var(--text-light);}
+.sms-consent-group{margin:0 0 18px;}
+.sms-consent-legal{font-size:0.72rem;line-height:1.6;color:var(--text-light);margin:0;padding-left:27px;}
+.cta-form-wrap .sms-consent-legal{color:rgba(255,255,255,0.6);}
+.sms-consent-check{display:flex;align-items:flex-start;gap:10px;margin:0 0 10px;cursor:pointer;font-size:0.78rem;line-height:1.6;color:var(--text-light);}
 .sms-consent-check input[type="checkbox"]{flex:0 0 auto;width:17px;height:17px;margin:2px 0 0;cursor:pointer;accent-color:var(--blue);}
 .sms-consent-check span{flex:1;}
 .sms-consent-check strong{font-weight:700;}
@@ -1654,32 +1657,42 @@ async function submitForm(btn) {
   const card = btn.closest('.form-card,.inline-form,.bottom-form-card,.cta-form-wrap');
   if (!card) return;
   const inputs = card.querySelectorAll('input:not([type="checkbox"]),textarea');
-  const consentBox = card.querySelector('.sms-consent-check input[type="checkbox"]');
+  const serviceBox = card.querySelector('.sms-consent-service input[type="checkbox"]');
+  const marketingBox = card.querySelector('.sms-consent-marketing input[type="checkbox"]');
   const data = {};
   let hasPhone = false, hasEmail = false;
+  const f = { name:'', phone:'', email:'', property_address:'', message:'' };
   inputs.forEach(i => {
     const lbl = i.previousElementSibling ? i.previousElementSibling.textContent.trim() : (i.placeholder||i.type);
-    data[lbl] = i.value.trim();
-    if (i.type === 'tel' && i.value.trim()) hasPhone = true;
-    if (i.type === 'email' && i.value.trim()) hasEmail = true;
+    const val = i.value.trim();
+    data[lbl] = val;
+    // map to CRM fields by input type / label shape, so new label wording can't break it
+    if (i.type === 'tel') { if (val) hasPhone = true; if (!f.phone) f.phone = val; }
+    else if (i.type === 'email') { if (val) hasEmail = true; if (!f.email) f.email = val; }
+    else if (i.tagName === 'TEXTAREA') { if (!f.message) f.message = val; }
+    else if (/address/i.test(lbl)) { if (!f.property_address) f.property_address = val; }
+    else if (!f.name) { f.name = val; }
   });
   if (!hasPhone && !hasEmail) { alert('Please enter a phone number or email address so we can reach you.'); return; }
-  if (hasPhone && consentBox && !consentBox.checked) {
-    alert('Please check the box to agree to receive text messages, or leave the phone number blank and we will reach you by email.');
-    consentBox.focus();
+  if (hasPhone && serviceBox && !serviceBox.checked) {
+    alert('Please check the first box to agree to receive text messages about your property inquiry, or leave the phone number blank and we will reach you by email.');
+    serviceBox.focus();
     return;
   }
-  data['SMS Consent'] = (consentBox && consentBox.checked) ? 'Yes' : 'No';
+  data['SMS Consent (Service)'] = (serviceBox && serviceBox.checked) ? 'Yes' : 'No';
+  data['SMS Consent (Marketing)'] = (marketingBox && marketingBox.checked) ? 'Yes' : 'No';
   const original = btn.innerHTML;
   btn.innerHTML = '⏳ Sending...';
   btn.disabled = true;
   try {
     const crmPayload = {
-      name: data['Name'] || data['Full Name'] || data['Your Name'] || '',
-      phone: data['Phone Number'] || data['Phone'] || data['Your Phone'] || '',
-      email: data['Email'] || data['Email Address'] || data['Your Email'] || '',
-      property_address: data['Property Address'] || data['Address'] || '',
-      message: data['Message'] || data['Additional Info'] || data['Tell us about your situation'] || ''
+      name: f.name,
+      phone: f.phone,
+      email: f.email,
+      property_address: f.property_address,
+      message: f.message,
+      sms_consent_service: data['SMS Consent (Service)'],
+      sms_consent_marketing: data['SMS Consent (Marketing)']
     };
     fetch('https://services.leadconnectorhq.com/hooks/ayfspoa42jBk1FihlTzI/webhook-trigger/32410d75-2cfa-4dd2-8550-e692934db9de', {
       method:'POST',
@@ -1707,17 +1720,23 @@ async function submitForm(btn) {
     setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.disabled = false; }, 4000);
   }
 }
-// Inject SMS consent checkbox next to the phone field on every form
+// Inject SMS consent checkboxes next to the phone field on every form
 document.addEventListener('DOMContentLoaded', function() {
+  var SERVICE = 'I agree to receive text messages from Bison Creek Ventures LLC (Dubuque Home Buyer) about my property inquiry.';
+  var MARKETING = 'I agree to receive promotional text messages from Bison Creek Ventures LLC (Dubuque Home Buyer), including special offers and cash offer updates.';
+  var LEGAL = 'Consent is not a condition of selling your property. Message frequency may vary. Message and data rates may apply. Reply <strong>STOP</strong> to opt out or <strong>HELP</strong> for help.';
   document.querySelectorAll('.form-card,.inline-form,.cta-form-wrap').forEach(function(form) {
     var tel = form.querySelector('input[type="tel"]');
-    if (!tel || form.querySelector('.sms-consent-check')) return;
+    if (!tel || form.querySelector('.sms-consent-group')) return;
     var anchor = tel.closest('.form-group') || tel;
     if (anchor.parentElement && anchor.parentElement.classList.contains('form-row')) anchor = anchor.parentElement;
-    var wrap = document.createElement('label');
-    wrap.className = 'sms-consent-check';
-    wrap.innerHTML = '<input type="checkbox"><span>I agree to receive text messages from Bison Creek Ventures LLC (Dubuque Home Buyer). Messages may include service and follow-up texts about my property inquiry, as well as occasional promotional messages such as cash offer updates. Consent is not a condition of selling your property. Message frequency may vary. Message and data rates may apply. Reply <strong>STOP</strong> to opt out or <strong>HELP</strong> for help.</span>';
-    anchor.parentNode.insertBefore(wrap, anchor.nextSibling);
+    var group = document.createElement('div');
+    group.className = 'sms-consent-group';
+    group.innerHTML =
+      '<label class="sms-consent-check sms-consent-service"><input type="checkbox"><span>' + SERVICE + '</span></label>' +
+      '<label class="sms-consent-check sms-consent-marketing"><input type="checkbox"><span>' + MARKETING + '</span></label>' +
+      '<p class="sms-consent-legal">' + LEGAL + '</p>';
+    anchor.parentNode.insertBefore(group, anchor.nextSibling);
   });
 });
 // Inject SMS disclosure under every form
