@@ -1722,9 +1722,9 @@ async function submitForm(btn) {
 }
 // Inject SMS consent checkboxes next to the phone field on every form
 document.addEventListener('DOMContentLoaded', function() {
-  var SERVICE = 'I agree to receive text messages from Bison Creek Ventures LLC (Dubuque Home Buyer) about my property inquiry.';
-  var MARKETING = 'I agree to receive promotional text messages from Bison Creek Ventures LLC (Dubuque Home Buyer), including special offers and cash offer updates.';
-  var LEGAL = 'Consent is not a condition of selling your property. Message frequency may vary. Message and data rates may apply. Reply <strong>STOP</strong> to opt out or <strong>HELP</strong> for help.';
+  var SERVICE = 'I agree to receive text messages from Bison Creek Ventures LLC (Dubuque Home Buyer) about my property inquiry. Msg frequency may vary. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help.';
+  var MARKETING = 'I agree to receive promotional text messages from Bison Creek Ventures LLC (Dubuque Home Buyer), including special offers and cash offer updates. Msg frequency may vary. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help.';
+  var LEGAL = 'Consent is not a condition of selling your property.';
   document.querySelectorAll('.form-card,.inline-form,.cta-form-wrap').forEach(function(form) {
     var tel = form.querySelector('input[type="tel"]');
     if (!tel || form.querySelector('.sms-consent-group')) return;
