@@ -1742,7 +1742,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Inject SMS disclosure under every form
 document.addEventListener('DOMContentLoaded', function() {
   var disc = document.createElement('template');
-  disc.innerHTML = '<div class="sms-disclosure">By providing your phone number and submitting your information, you agree to receive text messages from Dubuque Home Buyer. You may receive messages related to your property inquiry, evaluations, cash offers, and follow-up communications. You provide prior express consent to receive SMS communications, including via automated systems where permitted by law. <strong>Consent is not a condition of selling your property.</strong> Message frequency may vary. Message and data rates may apply. Reply <strong>STOP</strong> to opt out at any time. Reply <strong>HELP</strong> for help or email <a href="mailto:Dubuquehomebuyer@gmail.com" style="color:inherit;text-decoration:underline;">Dubuquehomebuyer@gmail.com</a>.</div>';
+  disc.innerHTML = '<div class="sms-disclosure">Text messages are only sent if you check one of the boxes above. Reply <strong>STOP</strong> to opt out, <strong>HELP</strong> for help, or email <a href="mailto:dubuquehomebuyer@gmail.com" style="color:inherit;text-decoration:underline;">dubuquehomebuyer@gmail.com</a>.</div>';
   document.querySelectorAll('.form-card,.inline-form,.cta-form-wrap').forEach(function(form) {
     form.appendChild(disc.content.cloneNode(true));
   });
