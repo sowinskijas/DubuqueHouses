@@ -935,7 +935,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
       </div>
 
       <!-- Right: form -->
-      <div style="background:#fff;border:1px solid #d0dce8;border-radius:14px;padding:36px;">
+      <div class="js-lead-form" style="background:#fff;border:1px solid #d0dce8;border-radius:14px;padding:36px;">
         <div style="background:#1e50a0;margin:-36px -36px 28px;padding:20px 32px;border-radius:14px 14px 0 0;text-align:center;">
           <h3 style="font-family:'Outfit',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:2px;">Get Your Free Cash Offer</h3>
           <p style="font-size:0.8rem;color:rgba(255,255,255,0.85);margin:0;">We'll follow up with no pressure — at your pace.</p>
@@ -1150,7 +1150,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
       <p>&copy; 2026 Dubuque Home Buyers. All rights reserved. Serving Dubuque County, Iowa.</p>
       <p>Dubuque &middot; Asbury &middot; Peosta &middot; East Dubuque &middot; Key West &middot; Galena</p>
       <p style="margin-top:10px;font-size:0.72rem;color:#888;line-height:1.5;">*CASH does not mean there is no financing in the transaction or that closing is guaranteed.</p>
-      <p style="margin-top:14px;font-size:0.68rem;color:#aaa;line-height:1.6;max-width:900px;margin-left:auto;margin-right:auto;">This website is for informational purposes only and does not constitute legal, financial, or real estate advice. We are a real estate investment company and are not acting as your real estate agent, attorney, or financial advisor. All offers are subject to property evaluation, market conditions, and seller agreement. Any potential benefits discussed, including avoiding foreclosure, saving time, or reducing costs, are not guaranteed and will vary based on individual circumstances. Selling your property may not stop foreclosure or fully protect your credit. You are encouraged to consult with a licensed attorney, financial advisor, or real estate professional before making any decisions regarding your property. By submitting your information, you agree to be contacted by phone, text message, and/or email regarding your property. Message and data rates may apply. Consent is not a condition of purchase. You can opt out at any time by replying STOP.</p>
+      <p style="margin-top:14px;font-size:0.68rem;color:#aaa;line-height:1.6;max-width:900px;margin-left:auto;margin-right:auto;">This website is for informational purposes only and does not constitute legal, financial, or real estate advice. We are a real estate investment company and are not acting as your real estate agent, attorney, or financial advisor. All offers are subject to property evaluation, market conditions, and seller agreement. Any potential benefits discussed, including avoiding foreclosure, saving time, or reducing costs, are not guaranteed and will vary based on individual circumstances. Selling your property may not stop foreclosure or fully protect your credit. You are encouraged to consult with a licensed attorney, financial advisor, or real estate professional before making any decisions regarding your property. By submitting your information, you agree that we may contact you by phone or email about your property inquiry. Text messages are only sent if you checked one of the SMS consent boxes on our forms. Message and data rates may apply. Consent is not a condition of purchase. You can opt out at any time by replying STOP.</p>
       <p style="margin-top:12px;font-size:0.72rem;color:#aaa;line-height:1.5;max-width:900px;margin-left:auto;margin-right:auto;">*Dubuque Home Buyers is a real estate investment company. We purchase properties subject to our internal criteria and do not guarantee an offer on every property.</p>
     </div>
   </div>
@@ -1654,7 +1654,7 @@ function toggleFaq(btn) {
 }
 
 async function submitForm(btn) {
-  const card = btn.closest('.form-card,.inline-form,.bottom-form-card,.cta-form-wrap');
+  const card = btn.closest('.form-card,.inline-form,.bottom-form-card,.cta-form-wrap,.js-lead-form');
   if (!card) return;
   const inputs = card.querySelectorAll('input:not([type="checkbox"]),textarea');
   const serviceBox = card.querySelector('.sms-consent-service input[type="checkbox"]');
@@ -1725,7 +1725,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var SERVICE = 'I agree to receive text messages from Bison Creek Ventures LLC (Dubuque Home Buyer) about my property inquiry. Msg frequency may vary. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help.';
   var MARKETING = 'I agree to receive promotional text messages from Bison Creek Ventures LLC (Dubuque Home Buyer), including special offers and cash offer updates. Msg frequency may vary. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help.';
   var LEGAL = 'Consent is not a condition of selling your property.';
-  document.querySelectorAll('.form-card,.inline-form,.cta-form-wrap').forEach(function(form) {
+  document.querySelectorAll('.form-card,.inline-form,.cta-form-wrap,.js-lead-form').forEach(function(form) {
     var tel = form.querySelector('input[type="tel"]');
     if (!tel || form.querySelector('.sms-consent-group')) return;
     var anchor = tel.closest('.form-group') || tel;
@@ -1743,7 +1743,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   var disc = document.createElement('template');
   disc.innerHTML = '<div class="sms-disclosure">Text messages are only sent if you check one of the boxes above. Reply <strong>STOP</strong> to opt out, <strong>HELP</strong> for help, or email <a href="mailto:dubuquehomebuyer@gmail.com" style="color:inherit;text-decoration:underline;">dubuquehomebuyer@gmail.com</a>.</div>';
-  document.querySelectorAll('.form-card,.inline-form,.cta-form-wrap').forEach(function(form) {
+  document.querySelectorAll('.form-card,.inline-form,.cta-form-wrap,.js-lead-form').forEach(function(form) {
     form.appendChild(disc.content.cloneNode(true));
   });
 });
