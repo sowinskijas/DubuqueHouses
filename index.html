@@ -211,14 +211,14 @@ h1,h2,h3,h4{font-family:"Cormorant Garamond",serif;font-weight:700;line-height:1
 .btn-main:hover{background:var(--blue-dark);transform:translateY(-1px);}
 .btn-main:active{transform:translateY(0);}
 .form-note{font-size:0.72rem;color:var(--text-light);text-align:center;margin-top:10px;line-height:1.5;}
-.sms-consent-group{margin:0 0 18px;}
-.sms-consent-legal{font-size:0.72rem;line-height:1.6;color:var(--text-light);margin:0;padding-left:27px;}
-.cta-form-wrap .sms-consent-legal{color:rgba(255,255,255,0.6);}
-.sms-consent-check{display:flex;align-items:flex-start;gap:10px;margin:0 0 10px;cursor:pointer;font-size:0.78rem;line-height:1.6;color:var(--text-light);}
-.sms-consent-check input[type="checkbox"]{flex:0 0 auto;width:17px;height:17px;margin:2px 0 0;cursor:pointer;accent-color:var(--blue);}
+.sms-consent-group{margin:0 0 14px;}
+.sms-consent-group .sms-consent-legal{font-size:0.75rem;line-height:1.45;color:#666;margin:0;padding-left:23px;}
+.cta-form-wrap .sms-consent-group .sms-consent-legal{color:#fff;}
+.sms-consent-check{display:flex;align-items:flex-start;gap:8px;margin:0 0 6px;cursor:pointer;font-size:0.75rem;line-height:1.45;color:#666;}
+.sms-consent-check input[type="checkbox"]{flex:0 0 auto;width:15px;height:15px;margin:2px 0 0;cursor:pointer;accent-color:var(--blue);}
 .sms-consent-check span{flex:1;}
 .sms-consent-check strong{font-weight:700;}
-.cta-form-wrap .sms-consent-check{color:rgba(255,255,255,0.72);}
+.cta-form-wrap .sms-consent-check{color:#fff;}
 .cta-form-wrap .sms-consent-check input[type="checkbox"]{accent-color:#fff;}
 .sms-disclosure{margin-top:18px;padding:14px 16px;background:rgba(0,0,0,0.03);border:1px solid rgba(0,0,0,0.07);border-radius:8px;font-size:0.68rem;color:var(--text-light);line-height:1.65;}
 .sms-disclosure strong{color:var(--text-light);font-weight:400;}
@@ -618,7 +618,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
         <input type="email" placeholder="your@email.com">
       </div>
       <button class="btn-main" onclick="submitForm(this)">🏠 Get Your Cash Offer Today →</button>
-      <p class="form-note">We never share your info. No spam, ever.</p>
+      <p class="form-note">We never sell your info. No spam, ever.</p>
     </div>
   </div>
 </section>
@@ -872,7 +872,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
         <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"></div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="(563) 227-8157"></div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="Your phone number"></div>
         <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
       </div>
       <button class="btn-main" onclick="submitForm(this)">🏠 Get Your Cash Offer Today →</button>
@@ -951,7 +951,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
           <textarea rows="3" placeholder="E.g. missed payments, received a notice, or just exploring options..."></textarea>
         </div>
         <button class="btn-main" onclick="submitForm(this)" style="max-width:100%;">Get My Free Cash Offer →</button>
-        <p class="form-note">We never share your information. No spam, ever.</p>
+        <p class="form-note">We never sell your information. No spam, ever.</p>
       </div>
 
     </div>
@@ -986,7 +986,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
         <div class="form-group"><label>Property Address</label><input type="text" placeholder="Full property address including city"></div>
         <div class="form-row">
           <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"></div>
-          <div class="form-group"><label>Best Phone Number</label><input type="tel" placeholder="(563) 227-8157"></div>
+          <div class="form-group"><label>Best Phone Number</label><input type="tel" placeholder="Your phone number"></div>
         </div>
         <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
         <div class="form-group">
@@ -994,7 +994,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
           <textarea rows="4" placeholder="E.g. Inherited property, need to sell fast, behind on payments, rental property, etc."></textarea>
         </div>
         <button class="btn-main" onclick="submitForm(this)" style="max-width:500px">📞 Request My Free Cash Offer →</button>
-        <p class="form-note">We never share your information. No spam, ever.</p>
+        <p class="form-note">We never sell your information. No spam, ever.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:20px;">
         <div style="padding:20px 24px;background:transparent;">
@@ -1202,7 +1202,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
         <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"></div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>Phone</label><input type="tel" placeholder="(563) 227-8157"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="Your phone number"></div>
         <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
       </div>
       <button class="btn-main" onclick="submitForm(this)" style="max-width:420px">⚡ Get Your Cash Offer Today →</button>
@@ -1240,7 +1240,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
         <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"></div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>Phone</label><input type="tel" placeholder="(563) 227-8157"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="Your phone number"></div>
         <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
       </div>
       <button class="btn-main" onclick="submitForm(this)" style="max-width:420px">💰 Get My Cash Offer →</button>
@@ -1276,7 +1276,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
         <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"></div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>Phone</label><input type="tel" placeholder="(563) 227-8157"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="Your phone number"></div>
         <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
       </div>
       <button class="btn-main" onclick="submitForm(this)" style="max-width:420px">🏠 Get My Cash Offer →</button>
@@ -1313,7 +1313,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
         <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"></div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>Phone</label><input type="tel" placeholder="(563) 227-8157"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="Your phone number"></div>
         <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
       </div>
       <button class="btn-main" onclick="submitForm(this)" style="max-width:420px">Get My As-Is Cash Offer →</button>
@@ -1349,7 +1349,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
         <div class="form-group"><label>Your Name</label><input type="text" placeholder="Heir or executor name"></div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>Phone</label><input type="tel" placeholder="(563) 227-8157"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="Your phone number"></div>
         <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
       </div>
       <button class="btn-main" onclick="submitForm(this)" style="max-width:420px">Get Inherited Property Offer →</button>
@@ -1386,7 +1386,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
         <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"></div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>Phone</label><input type="tel" placeholder="(563) 227-8157"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="Your phone number"></div>
         <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
       </div>
       <button class="btn-main" onclick="submitForm(this)" style="max-width:420px;">Get My Free Cash Offer →</button>
@@ -1422,7 +1422,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
         <div class="form-group"><label>Your Name</label><input type="text" placeholder="Property owner name"></div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>Phone</label><input type="tel" placeholder="(563) 227-8157"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="Your phone number"></div>
         <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
       </div>
       <button class="btn-main" onclick="submitForm(this)" style="max-width:420px">🏘️ Get Rental Property Offer →</button>
@@ -1459,7 +1459,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
         <div class="form-group"><label>Executor / Contact Name</label><input type="text" placeholder="Your name"></div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>Phone</label><input type="tel" placeholder="(563) 227-8157"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="Your phone number"></div>
         <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
       </div>
       <button class="btn-main" onclick="submitForm(this)" style="max-width:420px">⚖️ Get Probate Property Offer →</button>
@@ -1487,7 +1487,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
         <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"></div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>Phone</label><input type="tel" placeholder="(563) 227-8157"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="Your phone number"></div>
         <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
       </div>
       <button class="btn-main" onclick="submitForm(this)" style="max-width:420px">📍 Get My Asbury Cash Offer →</button>
@@ -1515,7 +1515,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
         <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"></div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>Phone</label><input type="tel" placeholder="(563) 227-8157"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="Your phone number"></div>
         <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
       </div>
       <button class="btn-main" onclick="submitForm(this)" style="max-width:420px">📍 Get My Peosta Cash Offer →</button>
@@ -1543,7 +1543,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
         <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"></div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>Phone</label><input type="tel" placeholder="(563) 227-8157"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="Your phone number"></div>
         <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
       </div>
       <button class="btn-main" onclick="submitForm(this)" style="max-width:420px">📍 Get My East Dubuque Offer →</button>
@@ -1571,7 +1571,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
       <div class="form-group"><label>Property Address</label><input type="text" placeholder="Full property address including city"></div>
       <div class="form-row">
         <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"></div>
-        <div class="form-group"><label>Best Phone Number</label><input type="tel" placeholder="(563) 227-8157"></div>
+        <div class="form-group"><label>Best Phone Number</label><input type="tel" placeholder="Your phone number"></div>
       </div>
       <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
       <div class="form-group">
@@ -1579,7 +1579,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
         <textarea rows="4" placeholder="E.g. Inherited property, need to sell fast, behind on payments, rental property, etc."></textarea>
       </div>
       <button class="btn-main" onclick="submitForm(this)" style="max-width:500px">📞 Request My Free Cash Offer →</button>
-      <p class="form-note">We never share your information. No spam, ever.</p>
+      <p class="form-note">We never sell your information. No spam, ever.</p>
     </div>
     <div style="margin-top:28px;padding:26px;background:var(--light-gray);border-radius:10px;border:1px solid var(--mid-gray);">
       <h3 style="font-size:1.15rem;margin-bottom:14px;">Other Ways to Reach Us</h3>
@@ -1678,10 +1678,10 @@ async function submitForm(btn) {
     else if (/address/i.test(lbl)) { if (!f.property_address) f.property_address = val; }
     else if (!f.name) { f.name = val; }
   });
-  if (!hasPhone && !hasEmail) { alert('Please enter a phone number or email address so we can reach you.'); return; }
-  if (hasPhone && serviceBox && !serviceBox.checked) {
-    alert('Please check the first box to agree to receive text messages about your property inquiry, or leave the phone number blank and we will reach you by email.');
-    serviceBox.focus();
+  if (!hasPhone || !hasEmail) {
+    alert('Please enter both your phone number and email address so we can reach you.');
+    const missing = card.querySelector(hasPhone ? 'input[type="email"]' : 'input[type="tel"]');
+    if (missing) missing.focus();
     return;
   }
   data['SMS Consent (Service)'] = (serviceBox && serviceBox.checked) ? 'Yes' : 'No';
