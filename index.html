@@ -1119,7 +1119,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
         <h4>Services</h4>
         <ul>
           <li><a href="#sell-fast-section" onclick="document.getElementById('sell-fast-section').scrollIntoView({behavior:'smooth'});return false;">Sell My House Fast</a></li>
-          <li><a href="#cash-buyers-section" onclick="document.getElementById('cash-buyers-section').scrollIntoView({behavior:'smooth'});return false;">Cash Home Buyers</a></li>
+          <li><a href="#" onclick="showPage('cash-buyers');return false;">Cash Home Buyers</a></li>
           <li><a href="#" onclick="showPage('as-is');return false;">Sell As-Is</a></li>
           <li><a href="#" onclick="showPage('inherited');return false;">Inherited Property</a></li>
           <li><a href="#" onclick="showPage('foreclosure');return false;">Foreclosure</a></li>
@@ -1644,6 +1644,11 @@ function showPage(page) {
   const el = document.getElementById('page-' + page);
   if (el) { el.style.display = 'block'; window.scrollTo({top:0,behavior:'smooth'}); }
 }
+
+// Open the contact page when the address ends with #contact (e.g. redirect from contact.html)
+document.addEventListener('DOMContentLoaded', function() {
+  if (location.hash === '#contact') showPage('contact');
+});
 
 function toggleFaq(btn) {
   const answer = btn.nextElementSibling;
