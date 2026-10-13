@@ -213,20 +213,20 @@ h1,h2,h3,h4{font-family:"Cormorant Garamond",serif;font-weight:700;line-height:1
 .form-note{font-size:0.72rem;color:var(--text-light);text-align:center;margin-top:10px;line-height:1.5;}
 .sms-consent-group{margin:0 0 14px;}
 .sms-consent-group .sms-consent-legal{font-size:0.75rem;line-height:1.45;color:#666;margin:0;padding-left:23px;}
-.cta-form-wrap .sms-consent-group .sms-consent-legal{color:#fff;}
+.cta-form-wrap .sms-consent-group .sms-consent-legal{color:#fff;text-align:left;}
 .sms-consent-check{display:flex;align-items:flex-start;gap:8px;margin:0 0 6px;cursor:pointer;font-size:0.75rem;line-height:1.45;color:#666;}
 .sms-consent-check input[type="checkbox"]{flex:0 0 auto;width:15px;height:15px;margin:2px 0 0;cursor:pointer;accent-color:var(--blue);}
 .sms-consent-check span{flex:1;}
 .sms-consent-check strong{font-weight:700;}
-.cta-form-wrap .sms-consent-check{color:#fff;}
+.cta-form-wrap .sms-consent-check{color:#fff;text-align:left;}
 .cta-form-wrap .sms-consent-check input[type="checkbox"]{accent-color:#fff;}
-.sms-disclosure{margin-top:18px;padding:14px 16px;background:rgba(0,0,0,0.03);border:1px solid rgba(0,0,0,0.07);border-radius:8px;font-size:0.68rem;color:var(--text-light);line-height:1.65;}
-.sms-disclosure strong{color:var(--text-light);font-weight:400;}
+.sms-disclosure{margin-top:14px;padding:12px 14px;background:rgba(0,0,0,0.03);border:1px solid rgba(0,0,0,0.07);border-radius:8px;font-size:0.75rem;color:#666;line-height:1.45;}
+.sms-disclosure strong{color:#666;font-weight:400;}
 .sms-disclosure ul{list-style:none;margin:4px 0 8px;padding:0;}
 .sms-disclosure ul li{padding-left:12px;position:relative;}
 .sms-disclosure ul li::before{content:"–";position:absolute;left:0;}
-.cta-form-wrap .sms-disclosure{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.12);color:rgba(255,255,255,0.5);}
-.cta-form-wrap .sms-disclosure strong{color:rgba(255,255,255,0.5);font-weight:400;}
+.cta-form-wrap .sms-disclosure{background:rgba(0,0,0,0.06);border-color:rgba(255,255,255,0.12);color:#fff;text-align:left;}
+.cta-form-wrap .sms-disclosure strong{color:#fff;font-weight:400;}
 
 /* ── SECTION BASICS ── */
 section{padding:80px 40px;}
@@ -1713,6 +1713,7 @@ async function submitForm(btn) {
       btn.innerHTML = '✅ Thank you! We\'ll be in touch as soon as we can.';
       btn.style.background = '#1a7a3f';
       inputs.forEach(i => i.value = '');
+      [serviceBox, marketingBox].forEach(b => { if (b) b.checked = false; });
       setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.disabled = false; }, 5000);
     } else {
       btn.innerHTML = '❌ Something went wrong. Please call us.';
