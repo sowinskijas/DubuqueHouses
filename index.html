@@ -396,7 +396,7 @@ section{padding:80px 40px;}
 
 /* ── ABOUT / SEO PAGES ── */
 .seo-page{display:none;min-height:100vh;padding-top:68px;}
-.page-hero{background:var(--blue);padding:72px 40px 60px;text-align:center;}
+.page-hero{background:var(--blue);padding:calc(var(--header-h,154px) - 40px) 40px 60px;text-align:center;}
 .page-hero h1,.page-hero h2{color:var(--white);font-size:clamp(1.8rem,3.5vw,3rem);margin-bottom:14px;}
 .page-hero h1 span,.page-hero h2 span{color:#7ec8f5;}
 .page-hero p{color:rgba(255,255,255,0.75);font-size:1rem;max-width:620px;margin:0 auto 28px;line-height:1.7;}
@@ -460,7 +460,7 @@ footer{background:#111111;color:rgba(255,255,255,0.45);padding:56px 40px 28px;}
   .foot-top{grid-template-columns:1fr;gap:28px;}
   .foot-bottom{flex-direction:column;text-align:center;}
   section{padding:56px 20px;}
-  .page-hero{padding:56px 20px 48px;}
+  .page-hero{padding:calc(var(--header-h,121px) - 30px) 20px 48px;}
   .page-body{padding:40px 20px;}
   .mobile-call-btn{display:flex;}
   body{padding-bottom:70px;}
@@ -1666,6 +1666,15 @@ function showPage(page) {
   const el = document.getElementById('page-' + page);
   if (el) { el.style.display = 'block'; window.scrollTo({top:0,behavior:'smooth'}); }
 }
+
+// Keep section titles clear of the fixed header: measure its real height (full size, at the top of the page)
+function setHeaderHeight() {
+  var hd = document.querySelector('.header');
+  if (hd && window.scrollY <= 80) document.documentElement.style.setProperty('--header-h', hd.offsetHeight + 'px');
+}
+document.addEventListener('DOMContentLoaded', setHeaderHeight);
+window.addEventListener('load', setHeaderHeight);
+window.addEventListener('resize', setHeaderHeight);
 
 // Open the contact page when the address ends with #contact (e.g. redirect from contact.html)
 document.addEventListener('DOMContentLoaded', function() {
